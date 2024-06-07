@@ -1,0 +1,16 @@
+extension String {
+    func isPalindrome() -> Bool {
+        // Удаляем пробелы и знаки пунктуации, приводим все к нижнему регистру
+        let cleanedString = self.lowercased().filter { $0.isLetter }
+        // Сравниваем очищенную строку с обратной ей
+        return cleanedString == String(cleanedString.reversed())
+    }
+}
+
+// Пример использования функции 
+let string = "A man, a plan, a canal, Panama"
+if string.isPalindrome() {
+    print("Строка является палиндромом.")
+} else {
+    print("Строка не является палиндромом.")
+}
